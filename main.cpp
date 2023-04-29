@@ -11,9 +11,11 @@ int CreateFile(std::string nameFile, std::string conteudo){
     if(arquivo.is_open()){
         arquivo << conteudo;
         arquivo.close();
+        return 1;
     }
-
-    return 0;
+    else{
+        return 0;
+    }
 }
 
 int ReadFile(std::string nameFile){
@@ -31,12 +33,14 @@ int ReadFile(std::string nameFile){
         conteudo = strStream.str();
 
         arquivo.close();
-
         std::cout << conteudo;
+        return 1;
         
     }
-    
-    return 0;
+    else{
+        return 0;
+    }
+
 }
 
 int main(){
@@ -44,8 +48,20 @@ int main(){
     std::string nameFile = "";
     std::string conteudo = "";
 
-    CreateFile(nameFile,conteudo);
-    ReadFile(nameFile);
+    if(CreateFile(nameFile,conteudo) == 1){
+        std::cout<< "Arquivo Salvo!";
+    }
+    else{
+        std::cout<< "Erro ao salvar arquivo.";
+    }
+
+
+    if(ReadFile(nameFile) == 1){
+        std::cout<< "Arquivo Copiado!";
+    }
+    else{
+        std::cout<< "Erro ao ler arquivo.";
+    }
 
     return 0;
 }
