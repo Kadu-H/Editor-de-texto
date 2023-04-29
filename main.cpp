@@ -4,13 +4,13 @@
 
 
 //Cria um arquivo caso não haja e envia o valor da variavel conteudo para dentro dele, se tudo deu certo o valor de retorno é 1, se não 0.
-int CreateFile(std::string nameFile, std::string conteudo){
+int CreateFile(std::string nameFile, std::string content){
 
     std::ofstream arquivo;
     arquivo.open(nameFile,std::ios::out);
-
+    
     if(arquivo.is_open()){
-        arquivo << conteudo;
+        arquivo << content;
         arquivo.close();
         return 1;
     }
@@ -23,7 +23,7 @@ int CreateFile(std::string nameFile, std::string conteudo){
 int ReadFile(std::string nameFile){
 
     std::ifstream arquivo;
-    std::string conteudo;
+    std::string content;
 
     std::stringstream strStream;
 
@@ -32,10 +32,10 @@ int ReadFile(std::string nameFile){
     if (arquivo.is_open()){
 
         strStream << arquivo.rdbuf();
-        conteudo = strStream.str();
+        content = strStream.str();
 
         arquivo.close();
-        std::cout << conteudo;
+        std::cout << content;
         return 1;
         
     }
@@ -49,10 +49,10 @@ int main(){
 
     //Variaveis basicas para funcionamento do codigo.
     std::string nameFile = "";
-    std::string conteudo = "";
+    std::string content = "";
 
     //Verifica se o arquivo foi Salvo.
-    if(CreateFile(nameFile,conteudo) == 1){
+    if(CreateFile(nameFile,content) == 1){
         std::cout<< "Arquivo Salvo!";
     }
     else{
