@@ -3,6 +3,7 @@
 #include <sstream>
 
 
+//Cria um arquivo caso não haja e envia o valor da variavel conteudo para dentro dele, se tudo deu certo o valor de retorno é 1, se não 0.
 int CreateFile(std::string nameFile, std::string conteudo){
 
     std::ofstream arquivo;
@@ -18,6 +19,7 @@ int CreateFile(std::string nameFile, std::string conteudo){
     }
 }
 
+//Abre o arquivo e copia o conteudo, se tudo deu certo o valor de retorno é 1, se não 0.
 int ReadFile(std::string nameFile){
 
     std::ifstream arquivo;
@@ -45,9 +47,11 @@ int ReadFile(std::string nameFile){
 
 int main(){
 
+    //Variaveis basicas para funcionamento do codigo.
     std::string nameFile = "";
     std::string conteudo = "";
 
+    //Verifica se o arquivo foi Salvo.
     if(CreateFile(nameFile,conteudo) == 1){
         std::cout<< "Arquivo Salvo!";
     }
@@ -55,7 +59,7 @@ int main(){
         std::cout<< "Erro ao salvar arquivo.";
     }
 
-
+    //Verifica se o Arquivo foi lido e copiado;
     if(ReadFile(nameFile) == 1){
         std::cout<< "Arquivo Copiado!";
     }
