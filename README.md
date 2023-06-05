@@ -9,6 +9,9 @@ O código será atualizado, visando a sua melhoria. Fique a vontade para contrib
  Para responder essa pergunta, vou fazer uma breve explicação sobre como funciona um editor de texto, um editor de texto é capaz de decodificar apenas um subconjunto de dados binários, como letras, números e alguns símbolos, então qualquer tipo de arquivo que pertence a esse subconjunto, o código poderá escrever e ler este arquivo, como arquivos .txt e .bat.
  
 ### Como rodar o projeto
- Para rodar o projeto você precisa de um compilador C++, abaixo está o codigo para compilar.
+ Para rodar o projeto você precisa de um compilador C++, abaixo está o codigo para compilar e executar o arquivo.
  
-`g++ main.cpp -o main`
+```
+g++ main.cpp -o main
+.\main
+```
